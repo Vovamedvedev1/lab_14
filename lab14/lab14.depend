@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1732585457 source:d:\users\stud130\documents\Медведев В\lab14\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<fstream>
+
+1732640144 source:c:\users\Владимир\documents\С++ 2 курс\lab14\lab14\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<fstream>
+	<numeric>
+
