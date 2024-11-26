@@ -18,7 +18,7 @@ std::vector<int>getNumbersFromFile(string fileName)
     }
     else
     {
-        throw "Не удалось открыть файл!!!" ;
+        throw "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»!!!" ;
     }
     return numbers;
 }
@@ -38,10 +38,10 @@ int main()
     vector<int>a = getNumbersFromFile("1.txt");
     printVector(a);
     int n;
-    cout << "введите n = "; cin>>n;
+    cout << "РІРІРµРґРёС‚Рµ n = "; cin>>n;
     int coutOfn = count(a.begin(), a.end(), n);
-    cout << "Число " << n << " встречается " << coutOfn << " раз. " << endl;
-    cout << "Позиции числа " << n << ": ";
+    cout << "Р§РёСЃР»Рѕ " << n << " РІСЃС‚СЂРµС‡Р°РµС‚СЃСЏ " << coutOfn << " СЂР°Р·. " << endl;
+    cout << "РџРѕР·РёС†РёРё С‡РёСЃР»Р° " << n << ": ";
     auto iter = a.begin();
     while (iter <= a.end())
     {
@@ -58,9 +58,9 @@ int main()
             return (c%2 == 0);
         }
     );
-    cout << "Количество четных чисел:  " << c1 << endl;
+    cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… С‡РёСЃРµР»:  " << c1 << endl;
     iter = a.begin();
-    cout << "Позиции четных элементов:  ";
+    cout << "РџРѕР·РёС†РёРё С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ:  ";
     while (iter <= a.end())
     {
         iter = find_if(iter, a.end(), [](int value){ return value % 2 == 0; });
@@ -76,9 +76,9 @@ int main()
             return (c%2 != 0);
         }
     );
-    cout << "Количество нечетных чисел:  " << c2<<  endl;
+    cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРµС‡РµС‚РЅС‹С… С‡РёСЃРµР»:  " << c2<<  endl;
     iter = a.begin();
-    cout << "Позиции нечетных элементов:  ";
+    cout << "РџРѕР·РёС†РёРё РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ:  ";
     while (iter <= a.end())
     {
         iter = find_if(iter, a.end(), [](int value){ return value % 2 != 0; });
@@ -98,21 +98,21 @@ int main()
                 return c;
             }
         });
-        cout << "Сумма четных элементов:  " << sum <<endl;
+        cout << "РЎСѓРјРјР° С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ:  " << sum <<endl;
     }
     else
     {
         sum = accumulate(a.begin(), a.end(), 0);
-        cout << "Сумма всех элементов:  " <<sum <<endl;
+        cout << "РЎСѓРјРјР° РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ:  " <<sum <<endl;
     }
 
-    cout << "Отсортированный вектор " << endl;
+    cout << "РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РІРµРєС‚РѕСЂ " << endl;
     vector<int>l;
     l.resize(a.size());
     std::copy(a.rbegin(), a.rend(), l.begin());
     std::sort(l.begin(), l.end());
     printVector(l);
-    cout << "Вектор после перестановки первого и последнего" << endl;
+    cout << "Р’РµРєС‚РѕСЂ РїРѕСЃР»Рµ РїРµСЂРµСЃС‚Р°РЅРѕРІРєРё РїРµСЂРІРѕРіРѕ Рё РїРѕСЃР»РµРґРЅРµРіРѕ" << endl;
     std::swap(*a.begin(), *(a.end()-1));
     printVector(a);
     return 0;
