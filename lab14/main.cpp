@@ -5,13 +5,14 @@
 #include <numeric>
 using namespace std;
 
-std::vector<int>getNumbersFromFile(string fileName)
+template<typename T>
+std::vector<T>getNumbersFromFile(string fileName)
 {
     fstream ofs(fileName, ios::in);
-    vector<int>numbers(0);
+    vector<T>numbers(0);
     if (ofs.is_open())
     {
-        int aa;
+        T aa;
         while(ofs>>aa)
             numbers.push_back(aa);
         ofs.close();
@@ -35,7 +36,16 @@ void printVector(vector<T>numbers)
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    vector<int>a = getNumbersFromFile("1.txt");
+    vector<int>a;
+    try
+    {
+        a = getNumbersFromFile<int>("1.txt");
+    }
+    catch(const char* ex)
+    {
+        cout << ex << endl;
+        return 0;
+    }
     printVector(a);
     int n;
     cout << "введите n = "; cin>>n;
